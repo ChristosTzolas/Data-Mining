@@ -13,7 +13,7 @@ patients_header = ['id', 'gender', 'age', 'hypertension', 'heart_disease', 'ever
 patients = pd.read_csv('healthcare-dataset-stroke-data\healthcare-dataset-stroke-data.csv', sep=',', names=patients_header, 
                      usecols=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], encoding="ISO-8859-1", low_memory=False, header=0)
 
-# Display basic info regarding our data
+# Print basic info regarding our data (characteristics and possible values)
 
 print("The characteristics in our dataset are:\n")
 for col in patients.columns:
@@ -31,7 +31,7 @@ print(f"Average glucose levels range: {min(patients.avg_glucose_level.unique())}
 print("(The rest of the characteristics have binary values)")
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Plot some graphs about the patients
+# Plot some graphs about the patients (display frequency of characteristics)
 
 plt.plot(patients.age, patients.bmi)
 
