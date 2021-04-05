@@ -18,7 +18,7 @@ patients = pd.read_csv('healthcare-dataset-stroke-data\healthcare-dataset-stroke
 print("The characteristics in our dataset are:\n")
 for col in patients.columns:
     print(col)
-
+# or print(patients.columns)    
 print(f"\nSpecifically, there are {len(patients.id.unique())} unique patient ids in the data, of {len(patients.age.unique())} different ages.\n")
 
 print("Regarding the possible values of these characteristics, those are:\n")
@@ -27,14 +27,24 @@ print(f"Work types: {(patients.work_type.unique())}")
 print(f"Resident types: {(patients.Residence_type.unique())}")
 print(f"Smoking statuses: {(patients.smoking_status.unique())}")
 print(f"BMI range: {min(patients.bmi.unique())} - {max(patients.bmi.unique())}")
-print(f"Average glucose levels range: {min(patients.avg_glucose_level.unique())} - {max(patients.avg_glucose_level.unique())}")
-print("(The rest of the characteristics have binary values)")
+print(f"Average glucose levels range: {min(patients.avg_glucose_level.unique())} - {max(patients.avg_glucose_level.unique())}\n")
+print("(The rest of the characteristics have binary values)\n")
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# print summary statistics
+
+print(patients.describe())
+
+print(patients['gender'].value_counts())
+patients['gender'].value_counts().plot.bar()
+# plt.show()
 
 # Plot some graphs about the patients (display frequency of characteristics)
 
-plt.plot(patients.age, patients.bmi)
+# plt.plot(patients.age, patients.bmi)
 
-plt.xlabel('Ages')
-plt.ylabel('BMI')
-plt.show()
+# plt.xlabel('Ages')
+# plt.ylabel('BMI')
+# plt.show()
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
