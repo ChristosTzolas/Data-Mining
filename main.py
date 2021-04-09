@@ -73,6 +73,7 @@ all_boyz = [strokers, non_strokers]
 good_data = pd.concat(all_boyz)
 sns.catplot(x="smoking_status", y="stroke", kind="bar",data=good_data)
 
+plt.title('Correlation between smoking types and strokes', fontsize=14)
 plt.xlabel('Smoking Status', fontsize=14)
 plt.ylabel('Percentage of Strokes (%)', fontsize=14)
 plt.show()
@@ -100,7 +101,7 @@ better_healthcare.to_csv("better_dataset.csv")
 # sns.countplot(better_healthcare['age'])
 # plt.show()
 
-# Add plot settings
+# # Add plot settings
 # sns.countplot(better_healthcare['hypertension'])
 # plt.show()
 # sns.countplot(better_healthcare['heart_disease'])
