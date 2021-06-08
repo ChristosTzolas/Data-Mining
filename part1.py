@@ -44,7 +44,7 @@ print(healthcare['gender'].value_counts(), "\n")
 print("Mean age of the dataset: {}".format(healthcare['age'].mean()))
 print("Median age of the dataset: {}".format(healthcare['age'].median()), "\n")
 # Output the top 10 ages present in the dataset
-print("Most common ages:\n")
+print("Most common ages (with instances):\n")
 print(healthcare['age'].value_counts().head(10), "\n")
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -86,49 +86,40 @@ better_healthcare = healthcare.copy()
 better_healthcare['age'] = better_healthcare['age'].round(-1)
 better_healthcare['avg_glucose_level'] = better_healthcare['avg_glucose_level'].round(-1)
 better_healthcare['bmi'] = better_healthcare['bmi'].round(-1)
+
 # Save to csv
 better_healthcare.to_csv("better_dataset.csv")
 
-# # Plot some graphs about the healthcare (display frequency of characteristics)
+# Plot some graphs about the healthcare (display frequency of characteristics)
 
-# # healthcare['gender'].value_counts().plot.bar()
-# # plt.show()
-# sns.countplot(better_healthcare['gender'])
+# healthcare['gender'].value_counts().plot.bar()
 # plt.show()
+sns.countplot(better_healthcare['gender'])
+plt.show()
 
-# # better_healthcare['age'].value_counts().plot.bar()
-# # plt.show()
-# sns.countplot(better_healthcare['age'])
+# better_healthcare['age'].value_counts().plot.bar()
 # plt.show()
+sns.countplot(better_healthcare['age'])
+plt.show()
 
-# # Add plot settings
-# sns.countplot(better_healthcare['hypertension'])
-# plt.show()
-# sns.countplot(better_healthcare['heart_disease'])
-# plt.show()
-# sns.countplot(better_healthcare['ever_married'])
-# plt.show()
-# sns.countplot(better_healthcare['work_type'])
-# plt.show()
-# sns.countplot(better_healthcare['Residence_type'])
-# plt.show()
-# sns.countplot(better_healthcare['avg_glucose_level'])
-# plt.show()
-# sns.countplot(better_healthcare['bmi'])
-# plt.show()
-# sns.countplot(better_healthcare['smoking_status'])
-# plt.show()
-# sns.countplot(better_healthcare['stroke'])
-# plt.show()
-
-#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-# [ Random notes - Delete later ]
-
-# # How to replace display cols: with mappings to standardize and clean the values
-# mappings = {'MALE' : 'Male', 'FEMALE' : 'Female', 'Male(Child)' : 'Boy', 'Female(Child)' : 'Girl'}
-# # replace values using the defined mappings
-# data['gender'] = data['gender'].replace(mappings)
-# data['gender'].value_counts()
+# Add plot settings
+sns.countplot(better_healthcare['hypertension'])
+plt.show()
+sns.countplot(better_healthcare['heart_disease'])
+plt.show()
+sns.countplot(better_healthcare['ever_married'])
+plt.show()
+sns.countplot(better_healthcare['work_type'])
+plt.show()
+sns.countplot(better_healthcare['Residence_type'])
+plt.show()
+sns.countplot(better_healthcare['avg_glucose_level'])
+plt.show()
+sns.countplot(better_healthcare['bmi'])
+plt.show()
+sns.countplot(better_healthcare['smoking_status'])
+plt.show()
+sns.countplot(better_healthcare['stroke'])
+plt.show()
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
