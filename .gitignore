@@ -1,9 +1,4 @@
 
-testing/petrol_consumption.csv
-testing/linear_regression.ipynb
-testing/student_scores.csv
-previous_files/main2.py
-previous_files/notebook.ipynb
-previous_files/neural_network.ipynb
-.vscode/settings.json
+testing/
+.vscode/
 previous_files/
