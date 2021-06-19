@@ -14,4 +14,4 @@ Those datasets are health-dataset-stroke-data.csv & spam_or_not_spam.csv, used i
 **Task #2:**
 
 Build a neural network that will be trained on the labeled emails dataset to predict whether an email is spam or not. At first we handle the imbalanced data of the dataset.
-Since deep learning models do not understand text, we convert text into numerical representation using Word Embeddings.
+Since deep learning models do not understand text, we convert text into numerical representation. First we use the Tokenizer API from Tensorflow Keras, which splits sentences into words and encodes these into integers. After tokenization, we represent each sentence by sequences of numbers using texts_to_sequences() from tokenizer object. Then we pad our sequences so that each sequence will have same length. We build a sequential model with dense layer architecture and then define manually the f1, recall and precision metrics. After compiling and data fitting the model with our padded data we are ready for evaluating our model and making some predictions.
